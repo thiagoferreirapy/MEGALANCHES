@@ -1,0 +1,148 @@
+{% extends 'bases/base.html' %}
+{% load static %}
+
+{% block 'head' %}
+    <link href="{% static 'geral/css/home2.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="../static/imagens/Group 34logo.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/dc37c7fe1c.js" crossorigin="anonymous"></script>
+{% endblock %}
+
+<title>{% block 'title' %}MEGA LANCHES{% endblock %}</title>
+
+{% block 'body' %}
+    
+    <main  onmouseover="btn2()">
+        
+        <section id="home" class="principal">
+            
+            <p>Lanches de qualidade e bem quentinho</p>
+            <h1>MEGA LANCHES</h1>
+            <h2>O lugar perfeito para matar a fome!!</h2>
+            
+        </section>
+        <section class="atendimento">
+            <div class="container_informacoes">
+                <div class="informacoes">
+                    <img src="{% static 'geral/img/icon_burguer.png' %}" alt="">
+                    <h2>HORARIO DE ATENDIMENTO</h2>
+                    <h3>Segunda-feira à Sexta-feira</h3>
+                    <p>das 11:00 às 22:00</p>
+                    <i class="fa-solid fa-circle"></i>
+                    <h3>Sàbado</h3>
+                    <p>das 10:00 às 23:00</p>
+                    <i class="fa-solid fa-circle"></i>
+                    <h3>Domingo</h3>
+                    <p>das 09:00 às 23:00</p>
+                    <i class="fa-solid fa-circle"></i>
+                    <h3>As entregas até as 21:00 horas</h3>
+                </div>
+            </div>
+            <div class="container_atendimento">
+                <h2>MEGA LANCHE</h2>
+                <ul>
+                    <li>Entrega rápida</li>
+                    <li>Promoções todos os dias</li>
+                    <li>Lanche feito na hora e bem quentinho</li>
+                    <li>Lnches personalizados da sua escolha</li>
+                    <li>Faça sua reserva ou pessa seu delivery</li>
+                    <li>Seja um cliente fiel e ganhe descontos</li>
+                </ul>
+            </div>
+        </section>
+        <section id="galeria" class="galeria">
+            <div class="titulo">
+                <i class="fa-solid fa-burger"></i>
+                <h2>GALERIA DE FOTOS</h2>
+                <i class="fa-solid fa-burger"></i>
+            </div>
+            <div class="imagens">
+                <img src="{% static 'geral/img/img_burguer/img1.png' %}" alt="">
+                <img src="{% static 'geral/img/img_burguer/img2.png' %}" alt="">
+                <img src="{% static 'geral/img/img_burguer/img3.png' %}" alt="">
+                <img src="{% static 'geral/img/img_burguer/img4.png' %}" alt="">
+            </div>
+            <div class="imagens2">
+                <img src="{% static 'geral/img/img_burguer/img5.png' %}" alt="">
+                <img src="{% static 'geral/img/img_burguer/img6.png' %}" alt="">
+                <img id="img7" src="{% static 'geral/img/img_burguer/img7.png' %}" alt="">
+            </div>
+        </section>
+        <section id="sobre" class="sobre">
+            <div class="titulo">
+                <p id="linha1"></p>
+                <h2>NOSSA HISTÓRIA</h2>
+                <p id="linha2"></p>
+            </div>
+            <div class="container_img_sobre">
+
+            
+                <div class="container_imagem">
+                    <img src="{% static 'geral/img/imagem_carrinho.png' %}" alt="">
+                </div>
+                <div class="container_sobre">
+                    <h3>Conheça a MEGA LANCHES</h3>
+                    <p>lLorem Ipsum é um texto modelo da indústria tipográfica e de impressão. 
+                        O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o 
+                        ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime
+                        de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia
+                        electrónica,</p>
+                        <p>mantendo-se essencialmente inalterada. Foi popularizada nos anos
+                            60 com a disponibilização das folhas de Letraset, que continham 
+                        passagens com Lorem Ipsum, e mais recentemente com os programas de publicação
+                            como o </p>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+                        Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero 
+                        sagittis mollis, est eget commodo auctor, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. 
+                        </p>
+                        <p>Aldus PageMaker que incluem versões do Lorem Ipsum.
+                            60 com a disponibilização das folhas de Letraset, que continham 
+                        passagens com Lorem Ipsum, e mais recentemente com os programas de publicação
+                            como o </p>
+                </div>
+            </div>
+        </section>
+        <section id="localizacao" class="contato_lcalizacao">
+            <div class="contato">
+                <div class="contato_icones">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="container_contato">
+                        <h4>Localização</h4>
+                        <p>Rua tal, Bairro TALTAL,  Cidade TAL</p>
+                    </div>
+                </div>
+                <div class="contato_icones">
+                    <i class="fa-sharp fa-solid fa-phone"></i>
+                    <div class="container_contato">
+                        <h4>Telefone</h4>
+                        <p><a href="tel:9999999999">(99) 99999999</a></p>
+                    </div>
+                </div>
+                <div class="contato_icones">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div class="container_contato">
+                        <h4>Email</h4>
+                        <p><a href="mailto:Emailtal@gmail.com">Emailtal@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="contato_icones">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <div class="container_contato">
+                        <h4>Whatsapp</h4>
+                        <p><a href="https://wa.me/+5561994162084" target="_blank">(99) 99999999</a></p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="container_maapa">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105073.44367172559!2d-58.50333869297177!3d-34.61566245706392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca3b4ef90cbd%3A0xa0b3812e88e88e87!2sBuenos%20Aires%2C%20Cidade%20Aut%C3%B4noma%20de%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1spt-BR!2sbr!4v1679698147260!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>2013-MEGA LANCHES</p>
+        <p>Todos os diereitos reservados</p>
+        <p>THIAGO FERREIRA</p>
+    </footer>
+{% endblock %}
+<script src="{% static 'geral/js/home.js' %}"></script>
+</html>

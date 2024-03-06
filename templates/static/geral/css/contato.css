@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;900&family=Road+Rage&family=Sarala:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+
+header{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 100%;
+    margin-top: 40px;
+}
+
+header nav{
+    display: flex;
+    align-items: center;
+}
+
+
+header nav a{
+    color: #E2E2E2;
+    text-decoration: none;
+    margin: 25px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+header nav a:hover{
+    color: #985D3A;
+    font-weight: 600;
+}
+
+
+header nav button{
+    color: #E2E2E2;
+    text-decoration: none;
+    margin: 20px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+header nav button:hover{
+    color: #985D3A;
+    font-weight: 600;
+}
+/* #home{
+    color: #985D3A;
+    font-weight: 700;
+} */
+
+
+
+
+header img{
+    width: 100px;
+    height: 80px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#menu{
+    color: #985D3A;
+    font-weight: 700;
+}
+
+#menu span{
+    color: #E2E2E2;
+    font-weight: 600;
+}
+
+#container_menu{
+    width: 200px;
+    height: 170px;
+    background-color: #909090;
+    position: absolute;
+    top: 90%;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+}
+
+#container_menu nav{
+    display: flex;
+    flex-direction: column;
+}
+#container_menu a{
+    text-decoration: none;
+    color: #e9e9e9;
+    margin: 0;
+    width: 100%;
+    text-align: justify;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    padding: 15px;
+    background-color: #985D3A;
+    
+}
+#container_menu a:hover{
+    border-bottom: 1px solid #3838384a;
+    border-top: 1px solid #3838384a;
+    color: #383838;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#container_menu #contato{
+    background-color: #383838;
+    color: #e9e9e9;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.principal{
+    background-image: url('../img/img_reserva.png');
+    height: 100vh;
+    object-fit: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.principal p{
+    font-family: 'Road Rage';
+    font-size: 25px;
+    color: #d0d0d0;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.715);
+}
+
+.principal h1{
+    font-family: 'Road Rage';
+    font-size: 100px;
+    color: #E2E2E2;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.715);
+}
+
+.principal h2{
+    font-family: 'Road Rage', sans-serif;
+    font-size: 40px;
+    color: #E2E2E2;
+    font-weight: 100;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.715);
+}
+
+.continue_scroll{
+    width: 100px;
+    height: 70px;
+    position: absolute;
+    top: 90vh;
+    animation: float 5s ease-in-out infinite;
+}
+
+.continue_scroll img{
+    width: 100%;
+    height: 100%;
+}
+
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0)
+    }
+    50% {
+        transform: translateY(-40px);
+    }
+}
+
+.principal_contato{
+    display: flex;
+    flex-direction: column;
+    background-color: #090708;
+}
+
+.principal_contato h2{
+    font-family: 'Road Rage', sans-serif;
+    font-size: 50px;
+    color: #E2E2E2;
+    font-weight: 100;
+    margin-top: 60px;
+    text-align: center;
+}
+
+
+.informacoes_contato{
+    display: flex;
+    align-items: normal;
+    justify-content: space-around;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+
+.container_contato{
+    background-color: #985D3A;
+    width: 300px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+.mapa{
+    display: flex;
+    align-items: center;
+}
+
+#btn_mapa{
+    text-decoration: none;
+    background-color: #090708;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+    font-family: 'Sarala';
+    font-size: 14px;
+    color: #E2E2E2;
+    font-weight: 600;
+    border-radius: 7px;
+    margin-top: 60px;
+}
+
+
+
+.container_contato h3{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: #E2E2E2;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.container_contato h4{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #E2E2E2;
+    font-weight: 500;
+    text-align: center;
+    
+}
+
+.container_contato p{
+    color: #E2E2E2;
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    
+}
+
+.icones_contato{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 20%;
+    align-items: center;
+}
+
+
+.icones_contato i{
+    color: #E2E2E2;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.icones_contato a{
+    text-decoration: none;
+    color: #E2E2E2;
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+
+.contato_form{
+    background-color: #090708;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.contato_form h2{
+    font-family: 'Road Rage', sans-serif;
+    font-size: 50px;
+    color: #E2E2E2;
+    font-weight: 100;
+    margin-top: 60px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contato_form form{
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    margin-bottom: 100px;
+}
+
+.contato_form form input{
+    padding: 12px;
+    margin: 7px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Sarala';
+    font-weight: 600;
+    background-color: #e9e9e9;
+}
+
+.contato_form form textarea{
+    margin: 10px;
+    border-radius: 10px;
+    padding: 12px;
+    outline: none;
+    border: none;
+    font-family: 'Sarala';
+    font-weight: 600;
+    background-color: #e9e9e9;
+}
+
+.contato_form button{
+    width: 200px;
+    margin: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: #909090;
+    color: #090708;
+    font-family: 'Poppins';
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s all ease-in;
+}
+
+.contato_form button:hover{
+    background-color: #985D3A;
+    color: #E2E2E2;
+}
+
+
+
+footer{
+    display: flex;
+    background-color: #383838;
+    padding: 20px;
+}
+
+.containers_footer{
+    display: flex;
+    align-items: normal;
+    justify-content: space-around;
+    width: 100%;
+
+}
+
+.containers{
+
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.containers h4{
+    color: #E2E2E2;
+    font-family: 'Sarala';
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.containers .icones{
+    display: flex;
+    align-items: center;
+}
+
+.icones a{
+    text-decoration: none;
+    
+}
+.icones i:hover{
+    color: #985D3A;
+}
+
+.containers nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.containers nav a{
+    color: #bababa;
+    text-decoration: none;
+    margin: 5px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    transition: 0.3s all ease-in;
+    font-size: 16px;
+}
+.containers nav a:hover{
+    text-decoration: underline;
+    color:#985D3A;
+}
+
+.icones p{
+    font-family: 'Poppins';
+    text-decoration: none;
+    color: #bababa;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: 500;
+
+}
+
+.icones i{
+    color: #bababa;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 20px;
+    transition: 0.3s all ease-in;
+}

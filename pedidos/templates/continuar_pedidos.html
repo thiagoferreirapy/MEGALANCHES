@@ -1,0 +1,520 @@
+{% load static %}
+{% load filters%}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'pedidos/css/continuar_pedidos.css' %}">
+    <script src="https://kit.fontawesome.com/dc37c7fe1c.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="{% static 'pedidos/img/favicon_logo.png' %}" type="image/x-icon">
+    <title>Pedidos - MEGA LANCHE</title>
+</head>
+<body>
+    <header >
+        <input type="text" name="produtos" id="produtos" placeholder="O que você quer comer hoje?">
+        <a href=""><i class="fa-solid fa-house"></i> HOME</a>
+        <a href=""><i class="fa-solid fa-cart-shopping"></i> CARRINHO</a>
+        <a href=""><i class="fa-solid fa-utensils"></i> CARDÁPIO</a>
+    </header>
+
+    <main oncontextmenu="return false">
+        <section class="pedidos">
+            <div class="menu_pedidos">
+                <a href="#promocao">Promoção do dia</a>
+                <a href="#mega-burguers">Mega Burgues</a>
+                <a href="#burguer-bacon">Mega Burguer-Bacon</a>
+                <a href="#frango-crocante">Mega Frango-Crocante</a>
+                <a href="#combo-familia">Combo Familía</a>
+                <a href="#combom-lanche-bebidas">Combo (lanche + beb...</a>
+                <a href="#vegetarianos">Mega dos Vegetarianos</a>
+                <a href="#milk-sobremesas">Milk Shake e Sobremesas</a>
+                <a href="#bebidas">Bebidas</a>
+            </div>
+            <div class="opcoes_pedido">
+                <div class="principal_pedidos">
+                    <div class="detalhes_produto">
+                        <button><i class="fa-solid fa-chevron-left"></i></button>
+                        <h1>DETALHES DO PRODUTO</h1>
+                    </div>
+                    <div class="container_informacoes">
+                        <img src="{{lanche|image_load}}"  alt="">
+                        <div class="titulo_burguer">
+                            <h2>{{lanche.nome}}</h2>
+                            <p>Já imaginou em sentir a felicidade 
+                                em uma mordida? Pois bem esse MEGA tem 
+                                essa sensação.</p>
+                            <p>Descrição: {{lanche.descricao}}</p>
+                        
+                        </div>
+                        
+                    </div>
+                    <div class="pesquisa">
+                        <label for="ingrediente">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" name="ingrediente" id="ingrediente" placeholder="Pesquise pelo nome do ingrediente extra">
+                        </label>
+                        
+                    </div>
+                </div>
+                <div  class="container_extra" id="arrow">
+                    <div  class="extra_container">
+                        <div onclick="display1()" class="titulo_extra">
+                            <div class="titulo">
+                                <h3>Faça seu extra</h3>
+                                <p>Escolha até 5 itens</p>
+                            </div>
+                            <button><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        
+
+                        
+                        <div style="display: none"  id="informacoes_extra" class="container_drop">
+
+                            {% for extra in extras %}
+                            <div class="informacoes_extra ">
+                                <div class="content_img_produto">
+                                    <img src="{{extra.imagem.url}}" class="img_produto" alt="">
+                                </div>
+                                    <div class="container_informacoes_extra">
+                                        <h4>{{extra.nome}}</h4>
+                                        <p>{{extra.descricao}}</p>
+                                        <input type="text" disabled value="{{extra.valor}}" id="valor_extra"  style="display: none;">
+                                        <p id="valor"><span>R$ {{extra.valor}}0</span></p>
+
+                                        <p ><strong id="maximo-produto">MÁXIMO {{extra.quantidade}}</strong></p>
+                                    </div>
+                                    <div class="escolha_quantidade">
+                                        
+                                        
+                                        
+                                        <button onclick="retirar_extra('{{extra.valor}}','{{lanche.valor}}')"  class="btn_menos" id="btn_menos_extra" >
+                                            <i class="fa-solid fa-minus"></i>
+                                        </button>
+
+                                        <input type="text" name="valor" value="" placeholder="0" id="quantidade_item_extra{{extra.id}}">
+
+                                        <button onclick="verificaPedido('{{extra.id}}','{{lanche.id}}')"  class="btn_mais" id="btn_mais_extra">
+                                            <i class="fa-solid fa-plus"></i>
+                                        </button>
+                                    </div>
+                            </div>
+                                    
+                            {% endfor %}
+                        </div>
+                        
+                    </div>
+                    
+
+                </div>
+
+                <div  class="container_produto" id="arrow">
+                    <div  class="produto_container">
+                        <div onclick="display2()" class="titulo_produto">
+                            <div class="titulo">
+                                <h3>Que tal um acompanhamento?</h3>
+                                <p>Escolha até 10 itens</p>
+                            </div>
+                            <button><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        
+    
+                        <div style="display: none"  id="acompanhamento_tiras">
+                            {% for acompanhamento in acompanhamentos %}
+                            <div class="informacoes_produto">
+                                <div class="content_img_produto">
+                                    <img src="{{acompanhamento.imagem.url}}" class="img_produto" alt="">
+                                </div>
+                                
+                                <div class="container_informacoes_produto">
+                                    <h4>{{acompanhamento.nome}}</h4>
+                                    <p>{{acompanhamento.descricao}}</p>
+                                    <p id="valor"><span>R$ {{acompanhamento.valor}}0</span></p>
+
+                                    <p><strong>MÁXIMO {{acompanhamento.quantidade}}</strong></p>
+                                </div>
+                                <div class="escolha_quantidade">
+                                
+                                
+                                
+                                    <button id="btn_menos_tiras" class="btn_menos">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
+    
+                                    <p id="quantidade_item_produto_tiras">0</p>
+    
+                                    <button id="btn_mais_tiras" class="btn_mais">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                                    
+                            {% endfor %}
+                            
+                        </div>
+                        
+    
+                    </div>
+                    
+
+                </div>
+                <!-- ################################################################ sobremesa -->
+                <div  class="container_produto" id="arrow">
+                    <div  class="produto_container">
+                        <div onclick="display3()" class="titulo_produto">
+                            <div class="titulo">
+                                <h3>Vamos de sobremesa?</h3>
+                                <p>Escolha até 10 itens</p>
+                            </div>
+                            <button><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        
+    
+                        <div style="display: none"  id="sobremesa-shake-chocolate">
+                            {% for sobremesa in sobremesas %}
+                            <div class="informacoes_produto">
+                                <div class="content_img_produto">
+                                    <img src="{{sobremesa.imagem.url}}" class="img_produto" alt="">
+                                </div>
+                                
+                                <div class="container_informacoes_produto">
+                                    <h4>{{sobremesa.nome}}</h4>
+                                    <p>{{sobremesa.descricao}}</p>
+                                    <p id="valor"><span>R$ {{sobremesa.valor}}0</span></p>
+
+                                    <p><strong>MÁXIMO {{sobremesa.quantidade}}</strong></p>
+                                </div>
+                                <div class="escolha_quantidade">
+                                
+                                
+                                
+                                    <button class="btn_menos">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
+    
+                                    <p id="quantidade_item_produto">0</p>
+    
+                                    <button class="btn_mais">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                                    
+                            {% endfor %}
+
+                        </div>
+                        
+                       
+    
+                    </div>
+                    
+
+                </div>
+                <!-- ##################################################################### bebidas -->
+                <div  class="container_produto" id="arrow">
+                    <div  class="produto_container">
+                        <div onclick="display4()" class="titulo_produto">
+                            <div class="titulo">
+                                <h3>Vamos matar a sede?</h3>
+                                <p>Escolha até 10 itens</p>
+                            </div>
+                            <button><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        
+    
+                        <div style="display: none"  id="bebida-hineken">
+
+                            {% for bebida in bebidas %}
+                            <div class="informacoes_produto">
+                                <div class="content_img_produto">
+                                    <img src="{{bebida.imagem.url}}" class="img_produto" alt="">
+                                </div>
+                                
+                                <div class="container_informacoes_produto">
+                                    <h4>{{bebida.nome}}</h4>
+                                    
+                                    <p id="valor"><span>R$ {{bebida.valor}}0</span></p>
+
+                                    <p><strong>MÁXIMO {{bebida.quantidade}}</strong></p>
+                                </div>
+                                <div class="escolha_quantidade">
+                                
+                                
+                                
+                                    <button class="btn_menos">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
+    
+                                    <p id="quantidade_item_produto">0</p>
+    
+                                    <button class="btn_mais">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                                    
+                            {% endfor %}
+                        </div>
+                        
+                    
+
+                </div>
+                
+                <div class="observacoes-pedido">
+                    <div class="titulo-observacoes">
+                        <h3>OBSERVAÇÕES SOBRE O PEDIDO</h3>
+                    </div>
+                    <textarea name="observacao-pedido" id="observacao-pedido" cols="30" rows="10"  placeholder="Ex: tire o ovo, cebola, tomate, etc..."></textarea>
+                </div>
+
+                <div class="container-finalizar-pedido">
+                    <div class="escolha_quantidade-final">
+                                    
+                                    
+                                    
+                        <button class="btn_menos" id="btn_menos_final">
+                            <i class="fa-solid fa-minus"></i>
+                        </button>
+    
+                        <p id="quantidade_produto_final">0</p>
+    
+                        <button class="btn_mais" id="btn_mais_final">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+
+                    <button type="submit" id="adcionar_pedido">
+                        <div class="valores-final">
+                            <h3>ADCIONAR PEDIDO</h3>
+                            <input type="text" id="valor-final" value="R$ {{lanche.valor}}0" >
+                            <h4 >R$ {{lanche.valor}}0</h4>
+                            
+                        </div>
+                    </button>
+                </div>
+            </div>
+            
+        </section>
+        <section style="display: none;">
+            <form action="" method="post">{% csrf_token%}
+                <h1>teste</h1>
+            </form>
+        </section>
+    </main>
+</body>
+<script >
+
+
+function verificaPedido(id, lanche){
+        extra = id
+        lanche = lanche
+        csrf_token = document.querySelector('[name=csrfmiddlewaretoken]').value
+
+        data = new FormData()
+        data.append('extra', extra)
+        data.append('lanche', lanche)
+
+        fetch("/pedidos/verificar_pedido/", {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': csrf_token,
+            },
+            body: data
+
+        }).then(function(result){
+            return result.json()
+        }).then(function(data){
+            
+            console.log(data)
+        
+            let valorFinal = document.getElementById('valor-final');
+            let valorExtra = document.querySelector(`#quantidade_item_extra${extra}`);
+
+            valorFinal.value = data['valor_json']
+            valorExtra.value = data['qtd'] 
+        
+        })
+    }
+
+
+
+let btn_mais = document.getElementById('btn_mais_extra')
+let btn_menos = document.getElementById('btn_menos_extra')
+let maximoExtra = document.getElementById('maximo-produto')
+let valorFinal = document.getElementById('valor-final')
+
+// let precoExtra = 6.00
+
+
+
+function adcionar_extra(id, valor){
+    
+    precoExtra = parseFloat(id)
+    console.log(precoExtra)
+    
+    lanche = parseFloat(valor)
+    total = 0
+    let valorExtra = document.querySelector('#quantidade_item_extra');
+    let extra = valorExtra.value;
+    
+    if (extra == ''){
+        let resultado = 1
+    valorExtra.innerHTML = `${resultado}`
+    valorExtra.value = `${resultado}`
+
+    preco = precoExtra * resultado
+    valorFinal.innerHTML = `R$ ${lanche + preco},00`  
+    
+
+    }else if (extra >= 5){
+        btn_mais.style.color = '#5a5a5a'
+        btn_menos.style.color = '#7d4322'
+        maximoExtra.style.color = 'red'
+    }else{
+        
+        let valor = parseFloat(extra)
+        let resultado = valor + 1
+        valorExtra.innerHTML = `${resultado}`
+        valorExtra.value = `${resultado}`
+
+
+        preco = precoExtra * resultado
+        console.log(resultado)
+        valorFinal.innerHTML = `R$ ${lanche + preco},00`  
+        total = valorFinal
+    }
+    
+
+}
+
+
+
+
+
+function retirar_extra(id,valor){
+    precoExtra = parseFloat(id)
+    lanche = parseFloat(valor)
+
+    let valorExtra = document.querySelector('#quantidade_item_extra');
+    let extra = valorExtra.value;
+    
+    if (extra <= 0){
+        let resultado = 0
+    valorExtra.innerHTML = `${resultado}`
+    valorExtra.value = `${resultado}`
+    valorFinal.innerHTML = `R$ ${lanche},00` 
+    }else if (extra <= 5){
+        
+        btn_mais.style.color = '#7d4322'
+        btn_menos.style.color = '#5a5a5a '
+        maximoExtra.style.color = '#5a5a5a'
+
+        let valor = parseInt(extra)
+        let resultado = valor - 1
+        valorExtra.innerHTML = `${resultado}`
+        valorExtra.value = `${resultado}`
+
+        preco = precoExtra * resultado
+        console.log(resultado)
+        valorFinal.innerHTML = `R$ ${lanche + preco},00` 
+    }
+    
+}
+    
+
+
+
+
+
+function display1() {
+
+var display = document.getElementById('informacoes_extra');
+display.classList.toggle('active');
+
+}
+
+
+
+function display2() {
+
+var display = document.getElementById('acompanhamento_tiras');
+display.classList.toggle('active');
+var display = document.getElementById('acompanhamento_batata');
+display.classList.toggle('active');
+
+}
+
+
+
+function display3() {
+
+var display = document.getElementById('sobremesa-shake-chocolate');
+display.classList.toggle('active');
+
+var display = document.getElementById('sobremesa-shake-morango');
+display.classList.toggle('active');
+
+
+var display = document.getElementById('sobremesa-shake-chocolate-oreo');
+display.classList.toggle('active');
+
+var display = document.getElementById('sobremesa-shake-chocolate-amendoin');
+display.classList.toggle('active');
+
+
+var display = document.getElementById('sobremesa-petigatou');
+display.classList.toggle('active');
+
+var display = document.getElementById('sobremesa-rosquinha');
+display.classList.toggle('active');
+
+var display = document.getElementById('sobremesa-sorvete-chocolate');
+display.classList.toggle('active');
+
+var display = document.getElementById('sobremesa-bolo-chocolate');
+display.classList.toggle('active');
+
+
+}
+
+
+
+function display4() {
+
+var display = document.getElementById('bebida-hineken');
+display.classList.toggle('active');
+
+var display = document.getElementById('bebida-corola');
+display.classList.toggle('active');
+
+
+var display = document.getElementById('bebida-buduaizer');
+display.classList.toggle('active');
+
+var display = document.getElementById('bebida-cocacola-zero');
+display.classList.toggle('active');
+
+var display = document.getElementById('bebida-cocacola-litro');
+display.classList.toggle('active');
+
+var display = document.getElementById('bebida-cocacola-latinha');
+display.classList.toggle('active');
+
+var display = document.getElementById('bebida-fanta-latinha');
+display.classList.toggle('active');
+
+var display = document.getElementById('bebida-suco-laranja');
+display.classList.toggle('active');
+
+var display = document.getElementById('bebida-suco-morango');
+display.classList.toggle('active');
+
+var display = document.getElementById('bebida-suco-maracuja');
+display.classList.toggle('active');
+
+}
+
+</script>
+
+</html>

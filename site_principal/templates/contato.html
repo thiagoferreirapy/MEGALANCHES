@@ -1,0 +1,141 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'geral/css/contato.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="../static/imagens/Group 34logo.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/dc37c7fe1c.js" crossorigin="anonymous"></script>
+    <title>Contato - MEGA LANCHES</title>
+</head>
+<body>
+    <header >
+        <nav>
+            <a href="{% url 'home' %}" id="home">HOME</a>
+            <button onmouseover="btn()" id="menu" >MENU/<span>CONTATO</span></button>
+            <div id="container_menu" >
+                <nav >
+                    <a id="contato">CONTATO</a>
+                    <a href="">CARDÁPIO</a>
+                    
+                    <a href="{% url 'reserva' %}">RESERVA</a>
+                    <a href="">TRABALHE CONOSCO</a>
+                </nav>
+                
+            </div>
+            
+            <a href="{% url 'pedidos' %}">PEDIDOS</a>
+            
+        </nav>
+    </header>
+    <main  onmouseover="btn2()">
+        <section class="principal">
+            <h1>MEGA LANCHES</h1>
+            <h2>QUE TAL CONVERSARMOS?</h2>
+            <p>TA AFIM DE CONVERSAR, TIRAR DÚVIDAS, OU APOIAR NOSSO TRABALHO? MANDE-ME UMA MENSSAGEM !!</p>
+            <div class="continue_scroll">
+                <img src="{% static 'geral/img/setas.png' %}" alt="">
+            </div>
+        </section>
+        <section class="principal_contato">
+            <h2>CONTATOS</h2>
+            <div class="informacoes_contato">
+                <div class="container_contato">
+                    <h3>CONTATOS</h3>
+                    <div class="icones_contato">
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:9999999999">(99) 99999999</a>
+                    </div>
+                    <div class="icones_contato">
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:Emailtal@gmail.com">Emailtal@gmail.com</a>
+                    </div>
+                    <div class="icones_contato">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <a href="https://wa.me/+5561994162084" target="_blank">(99) 99999999</a>
+                    </div>
+                </div>
+                <div class="container_contato mapa">
+                    <h3><i class="fa-solid fa-location-dot"></i> LOCALIZAÇÃO</h3>
+                    
+                    <p>Rua tal, Bairro TALTAL, Cidade TAL - SP</p>
+                    <a id="btn_mapa" href="">Ver no mapa</a>
+                </div>
+                <div class="container_contato">
+                    <h3>HORÁRIO DE ATENDIMENTO</h3>
+                    <h4>Segunda-feira à Sexta-feira</h4>
+                    <p>das 11:00 às 22:00</p>
+                    <h4>Sábado</h4>
+                    <p>das 11:00 às 23:00</p>
+                    <h4>Domingo</h4>
+                    <p>das 09:00 às 23:00</p> 
+                </div>
+            </div>
+            
+
+        </section>
+        <section class="contato_form">
+            <h2>Envie-nos uma menssagem</h2>
+            <form action="">
+                <input type="text" name="nome" id="nome" placeholder="Nome" required autocomplete="on">
+                <input type="text" name="email" id="email" placeholder="Email" required autocomplete="on">
+                <input type="text" name="assunto" id="assunto" placeholder="Assunto" required autocomplete="off">
+                <textarea name="menssagem" id="menssagem" cols="30" rows="10" placeholder="Menssagem"></textarea>
+                <button type="submit">Enviar menssagem</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <section class="containers_footer">
+            <div class="containers">
+                <h4>MENU</h4>
+                <nav>
+                    <a href="">Cardápio</a>
+                    <a href="">Pedidos</a>
+                    <a href="">Trabalhe Conosco</a>
+
+                </nav>
+            </div>
+            <div class="containers">
+                <h4>CONTATO</h4>
+                <div class="icones">
+                    <a href=""><i class="fa-solid fa-phone"></i></a>
+                    <a href=""><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://wa.me/+5561994162084" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                    
+                    
+                    
+                </div>
+                <h4>NOSSAS REDES</h4>
+                <div class="icones">
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href=""><i class="fa-brands fa-tiktok"></i></a>
+                    
+                    
+                    
+                </div>
+            </div>
+            <div class="containers">
+                <h4>LOCALIZAÇÃO</h4>
+                <div class="icones">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>Rua tal, Bairro TALTAL,  Cidade TAL</p>
+                </div>
+                <h4>FORMAS DE PAGAMENTO</h4>    
+                <div class="icones">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-pix"></i>
+                    <i class="fa-brands fa-paypal"></i>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+</body>
+<script src="{% static 'geral/js/home.js' %}"></script>
+</html>

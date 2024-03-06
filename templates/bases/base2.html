@@ -1,0 +1,41 @@
+{% load static %}
+
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block 'title' %}{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'geral/css/base2.css' %}" rel="stylesheet">
+    
+    {% block 'head' %}{% endblock %}
+  
+  </head>
+  <body>
+    <header onmouseover="btn2()">
+        <nav>
+            <a href="{% url 'home' %}" id="home">HOME</a>
+            <button onmouseover="btn()" id="menu" >MENU/<span>RESERVA</span></button>
+            <div id="container_menu" >
+                <nav >
+                    <a id="reserva">RESERVA</a>
+                    <a href="">CARDÁPIO</a>
+                    <a href="{% url 'contato' %}">CONTATO</a>
+                    <a href="">TRABALHE CONOSCO</a>
+                </nav>
+            
+            </div>
+            
+            <a href="{% url 'pedidos' %}">PEDIDOS</a>
+            
+        </nav>
+    </header>
+    {% block 'body' %}
+        
+    {% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'geral/js/home.js' %}"></script>
+  </body>
+</html>

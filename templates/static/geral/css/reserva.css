@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;900&family=Road+Rage&family=Sarala:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.principal{
+    background-image: url('../img/img_reserva.png');
+    height: 100vh;
+    object-fit: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.principal p{
+    font-family: 'Road Rage';
+    font-size: 25px;
+    color: #d0d0d0;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.715);
+}
+
+.principal h1{
+    font-family: 'Road Rage', sans-serif;
+    font-size: 100px;
+    color: #E2E2E2;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.715);
+}
+
+.principal h2{
+    font-family: 'Road Rage', sans-serif;
+    font-size: 40px;
+    color: #E2E2E2;
+    font-weight: 100;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.715);
+}
+
+.continue_scroll{
+    width: 100px;
+    height: 70px;
+    position: absolute;
+    top: 90vh;
+    animation: float 5s ease-in-out infinite;
+}
+
+.continue_scroll img{
+    width: 100%;
+    height: 100%;
+}
+
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0)
+    }
+    50% {
+        transform: translateY(-40px);
+    }
+}
+
+.principal_reserva{
+    display: flex;
+    flex-direction: column;
+    background-color: #090708;
+}
+
+.principal_reserva h2{
+    font-family: 'Road Rage', sans-serif;
+    font-size: 50px;
+    color: #E2E2E2;
+    font-weight: 100;
+    margin-top: 60px;
+    text-align: center;
+}
+
+
+.informacoes_reserva{
+    display: flex;
+    align-items: normal;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+
+.container_reserva{
+    
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.container_reserva h3{
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    color: #E2E2E2;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: left;
+    line-height: 25px;
+}
+
+.container_reserva ul{
+    margin-bottom: 15px;
+    margin-left: 20px;
+}
+
+.container_reserva li{
+    color: #E2E2E2;
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    
+    
+}
+.container_reserva p{
+    color: #E2E2E2;
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+
+    
+}
+
+.principal_reserva a{
+    text-decoration: none;
+    
+    background-color: #909090;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+    color: #090708;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 7px;
+    border: none;
+    margin-left: 60px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    transition: 0.3s all ease-in-out;
+}
+.principal_reserva a:hover{
+    background-color: #985D3A;
+    color: #fff;
+}
+
+footer{
+    display: flex;
+    background-color: #383838;
+    padding: 20px;
+}
+
+.containers_footer{
+    display: flex;
+    align-items: normal;
+    justify-content: space-around;
+    width: 100%;
+
+}
+
+.containers{
+
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.containers h4{
+    color: #E2E2E2;
+    font-family: 'Sarala';
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.containers .icones{
+    display: flex;
+    align-items: center;
+}
+
+.icones a{
+    text-decoration: none;
+    
+}
+.icones i:hover{
+    color: #985D3A;
+}
+
+.containers nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.containers nav a{
+    color: #bababa;
+    text-decoration: none;
+    margin: 5px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    transition: 0.3s all ease-in;
+    font-size: 16px;
+}
+.containers nav a:hover{
+    text-decoration: underline;
+    color:#985D3A;
+}
+
+.icones p{
+    font-family: 'Poppins';
+    text-decoration: none;
+    color: #bababa;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: 500;
+
+}
+
+.icones i{
+    color: #bababa;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 20px;
+    transition: 0.3s all ease-in;
+}

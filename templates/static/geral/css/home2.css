@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;900&family=Road+Rage&family=Sarala:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+#container_menu{
+    width: 200px;
+    height: 170px;
+    background-color: #909090;
+    position: absolute;
+    top: 90%;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+#container_menu nav{
+    display: flex;
+    flex-direction: column;
+}
+#container_menu a{
+    text-decoration: none;
+    color: #e9e9e9;
+    margin: 0;
+    width: 100%;
+    text-align: justify;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    padding: 15px;
+    background-color: #985D3A;
+    
+}
+#container_menu a:hover{
+    border-bottom: 1px solid #3838384a;
+    border-top: 1px solid #3838384a;
+    color: #383838;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.img_fundo{
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    height: 100vh;
+}
+
+.principal{
+    background-image: url('../img/fotoamburguers.png');
+    height: 100vh;
+    object-fit: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.principal p{
+    font-family: 'Road Rage';
+    font-size: 25px;
+    color: #d0d0d0;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.715);
+}
+
+.principal h1{
+    font-family: 'Road Rage', sans-serif;
+    font-size: 100px;
+    color: #E2E2E2;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.715);
+}
+
+.principal h2{
+    font-family: 'Road Rage', sans-serif;
+    font-size: 40px;
+    color: #E2E2E2;
+    font-weight: 100;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.715);
+}
+
+
+.atendimento{
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: #985D3A;
+    height: 90vh;
+}
+
+.container_informacoes{
+    width: 400px;
+    
+    background-color: #814903;
+    position: absolute;
+    top: 90%;
+    left: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.597);
+    padding: 20px;
+}
+
+
+.informacoes{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #0F0706;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.informacoes img{
+    width: 60px;
+    height: 60px;
+    margin-top: 30px;
+}
+
+.informacoes h2{
+    font-family: 'Road Rage', sans-serif;
+    font-size: 45px;
+    color: #E2E2E2;
+    font-weight: 100;
+    border-bottom: 2px solid #fff;
+    margin-bottom: 20px;
+}
+
+.informacoes h3{
+    font-family: 'Road Rage', sans-serif;
+    font-size: 30px;
+    color: #E2E2E2;
+    font-weight: 100;
+}
+
+.informacoes p{
+    font-family: 'Road Rage', sans-serif;
+    font-size: 27px;
+    color: #E2E2E2;
+    font-weight: 100;
+}
+
+.informacoes i{
+    font-size: 7px;
+    margin: 10px;
+    color: #C9C9C9;
+}
+
+.container_atendimento{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_atendimento h2{
+    font-family: 'Road Rage', sans-serif;
+    font-size: 45px;
+    color: #E2E2E2;
+    font-weight: 100;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+ul{
+    border-left: 3px solid #E2E2E2;
+    padding-left: 25px;
+    border-radius: 1px;
+}
+
+li{
+    margin-left: 10px;
+    font-family: 'Sarala', sans-serif;
+    font-size: 18px;
+    color: #E2E2E2;
+    font-weight: 0;
+    margin-bottom: 7px;
+    font-weight: 700;
+}
+
+
+.galeria{
+    display: flex;
+    background-color: #090708;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.titulo{
+    display: flex;
+    align-items: center;
+    margin: 35px;
+}
+
+.titulo h2{
+    font-family: 'Road Rage', sans-serif;
+    font-size: 45px;
+    color: #E2E2E2;
+    font-weight: 100;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.titulo i{
+    color: #C9C9C9;
+    font-size: 20px;
+}
+
+.imagens{
+    grid-template-rows: 1fr 1fr;
+}
+
+.imagens img{
+    width: 250px;
+    height: 250px;
+}
+
+
+.imagens2{
+    grid-template-rows: 1fr 1fr;
+
+}
+.imagens2 img{
+    width: 250px;
+    height: 250px;
+}
+
+#img7{
+    width: 500px;
+    height: 250px;
+}
+
+
+.sobre{
+    background-color: #090708;
+}
+
+#linha1{
+    width: 150px;
+    height: 3px;
+    background-color: #C9C9C9;
+}
+#linha2{
+    width: 890px;
+    height: 3px;
+    background-color: #C9C9C9;
+}
+
+.container_img_sobre{
+    display: flex;
+    margin-left: 50px;
+    margin-right: 50px;
+    height: 80vh;
+}
+
+
+.container_imagem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+    background-color: #383838;
+    
+    position: absolute;
+}
+
+.container_imagem img{
+    width: 579px;
+    height: 400px;
+    position: absolute;
+    left: 55px;
+}
+
+.container_sobre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    position: absolute;
+    width: 500px;
+    right: 100px;
+    margin-top: 50px;
+}
+
+.container_sobre h3{
+    font-family: 'Road Rage', sans-serif;
+    font-size: 35px;
+    color: #E2E2E2;
+    font-weight: 100;
+    margin-bottom: 20px;
+}
+.container_sobre p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    color: #E2E2E2;
+    font-weight: 100;
+    margin-bottom: 20px;
+    line-height: 15px;
+}
+
+.contato_icones{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+}
+
+.contato_lcalizacao{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+
+}
+.contato{
+    display: flex;
+    background-color: #383838;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    
+}
+
+
+
+.contato i{
+    color: #E2E2E2;
+    border: 2px solid #E2E2E2;
+    padding: 15px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+}
+
+.container_contato{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin-left: 20px;
+}
+
+.container_contato h4{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #E2E2E2;
+    font-weight: 600;
+}
+.container_contato p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    color: #E2E2E2;
+    font-weight: 500;
+    line-height: 15px;
+}
+
+.container_contato a{
+    text-decoration: none;
+    color:#C9C9C9;
+}
+.container_contato a:hover{
+    text-decoration: underline;
+    color:#ffffff;
+}
+
+.container_maapa{
+    width: 100%;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    background-color: #090708;
+}
+
+footer p{
+    font-family: 'Poppins', sans-serif;
+    color: #C9C9C9;
+    margin: 50px;
+    font-size: 14px;
+}
+

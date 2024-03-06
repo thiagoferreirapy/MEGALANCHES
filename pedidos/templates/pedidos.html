@@ -1,0 +1,202 @@
+{% load static %}
+{% load filters%}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'pedidos/css/pedidos.css' %}">
+    <script src="https://kit.fontawesome.com/dc37c7fe1c.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="{% static 'pedidos/img/favicon_logo.png' %}" type="image/x-icon">
+    <title>Pedidos - MEGA LANCHE</title>
+</head>
+<body>
+    <header >
+        <input type="text" name="produtos" id="produtos" placeholder="O que você quer comer hoje?">
+        <a href="{% url 'home' %}"><i class="fa-solid fa-house"></i> HOME</a>
+        <a href=""><i class="fa-solid fa-cart-shopping"></i> CARRINHO</a>
+        <a href=""><i class="fa-solid fa-utensils"></i> CARDÁPIO</a>
+    </header>
+    <main  onmouseover="btn2()">
+        {% if horario == 'aberto' %}
+            <section class="principal">
+                <p>Seu lanche de qualidade e bem quentinho</p>
+                <h1>MEGA LANCHE</h1>
+                <h2>Que tal faze seu <span>pedido</span>? <span>Rápido</span>, <span>fácil</span> e no <span>preccinho</span>...</h2>
+                
+                <h3>Fazer Pedido?</h3>
+                <div class="container_hora_pagamento">
+                    <div class="container_hora">
+                        <i class="fa-solid fa-clock"></i>
+                        <div class="hora">
+                            <p>Horário de atendimento</p>
+                            {% if horario == 'aberto' %}
+                                <p>{{horario.title}}<span><img src="{% static 'pedidos/img/aberto.png' %}" style="width: 10px;" alt=""></span> </p>
+                            {% else %}
+                            <p>{{horario.title}}<span><img src="{% static 'pedidos/img/fechado.png' %}" style="width: 10px;" alt=""></span> </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="container_formas_pagamento">
+                        <i class="fa-regular fa-credit-card"></i>
+                        <p>Formas de Pagaemnto</p>
+                    </div>
+                </div>
+                <div class="continue_scroll">
+                    <img src="{% static 'geral/img/setas.png' %}" alt="">
+                </div>
+            </section>
+            <section class="pedidos">
+                <div class="menu_pedidos">
+                    <form action="{% url 'pedidos' %}" method="get">
+
+                        {% for categoria in categorias %}
+                            <div class="col-md-2">
+                                <button type="submit" onclick="loading()" name="categoria_get" value="{{categoria.id}}">{{categoria}}</button>
+                            </div>
+                        {% endfor %}
+                    </form>
+                </div>
+                <div class="container_pedidos">
+                    <h3 id="promocao">{{nome_categoria}}</h3>
+                    <div class="container_burguers" >
+                        <form action="{% url 'pedidos' %}" method="post">{% csrf_token%}
+                            {% for valor in valores %}
+                            
+                            
+                                
+                                    
+                                <button type="submit" id="lanche" name="lanche" value="{{valor.id}}" class="burguers">
+                                    
+                                
+                                    <div class="container_informacoes_burguers">
+                                        <h4>{{valor.nome}}</h4>
+                                        <p>{{valor.descricao}}</p>
+                                            <h5>R$ {{valor.valor }}0</h5>
+                                    </div>
+                                    <div class="content_img">
+                                        <img src="{{valor|image_load}}"  alt="">
+                                    </div>
+                                    
+                                </button>
+
+                                    
+                                    
+                                    
+                                
+                            {% endfor %}
+                        </form>
+                        
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            </section>
+        {% else %}
+
+        <section class="principal">
+            <p>Seu lanche de qualidade e bem quentinho</p>
+            <h1>MEGA LANCHE</h1>
+            <h2>Que tal faze seu <span>pedido</span>? <span>Rápido</span>, <span>fácil</span> e no <span>preccinho</span>...</h2>
+            
+            <h4 class="atendimento_finalizado"><img class="triste" src="{% static 'pedidos/img/triste.png' %}" alt=""> Estamos fora do horário de atendimento <img class="triste" src="{% static 'pedidos/img/triste.png' %}" alt=""></h4>
+            <div class="container_hora_pagamento">
+                <div class="container_hora">
+                    <i class="fa-solid fa-clock"></i>
+                    <div class="hora">
+                        <p>Atendemos das <span>18h</span> às <span>22h</span></p>
+                        {% if horario == 'aberto' %}
+                            <p>{{horario.title}}<img src="{% static 'pedidos/img/aberto.png' %}" style="width: 10px;" alt=""> </p>
+                        {% else %}
+                        <p>{{horario.title}}<img src="{% static 'pedidos/img/fechado.png' %}" style="width: 10px;" alt=""> </p>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="container_formas_pagamento">
+                    <div class="pagamento">
+                        <i class="fa-regular fa-credit-card"></i>
+                        <p>Formas de Pagaemnto</p>
+                    </div>
+                    
+                    <div class="container_pagamento">
+                        <i title="pix" class="fa-brands fa-pix"></i>
+                        <i title="crédito e débito" class="fa-solid fa-credit-card"></i>
+                        <i title="dinheiro" class="fa-solid fa-wallet"></i>
+                        <i title="paypal" class="fa-brands fa-cc-paypal"></i>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    {% endif %}
+    </main>
+    <footer >
+        <div class="menu_footer">
+            <h6>MENU</h6>
+            <nav>
+                <a href="">Cardápio</a>
+                <a href="">Pedidos</a>
+                <a href="">Trabalhe Conosco</a>
+            </nav>
+        </div>
+        <div class="contato_redes">
+            <h6>CONTATOS</h6>
+            <nav>
+                <a href=""><i class="fa-solid fa-phone"></i></a>
+                <a href=""><i class="fa-solid fa-envelope"></i></a>
+                <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+            </nav>
+            <h6>NOSSAS REDES</h6>
+            <nav>
+                <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-tiktok"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+            </nav>
+        </div>
+        <div class="localizacao_pagamentos">
+            <h6>LOCALIZAÇÃO</h6>
+            <div class="local">
+                <i class="fa-solid fa-location-dot"></i>
+                <p>Rua tal, Bairro TALTAL,  Cidade TAL</p>
+            </div>
+            <h6>FORMAS DE PAGAMENTO</h6>
+            <div class="pagamentos">
+                <i class="fa-brands fa-cc-visa"></i>
+                <i class="fa-brands fa-cc-mastercard"></i>
+                <i class="fa-brands fa-pix"></i>
+                <i class="fa-brands fa-paypal"></i>
+            </div>
+        </div>
+    </footer>
+
+    <section class="loading">
+        <div class="container_loader"><div class="loadMenos"><i class="fa-solid fa-burger"></i></div></div>
+    </section>
+
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        setTimeout(()=>{
+            let loading = document.querySelector('.loading');
+            loading.style.display = 'none';
+        },3000)
+    })
+    function loading(){
+        let loading = document.querySelector('.loading');
+        loading.style.display = 'flex';
+    }
+
+    function cancelLoading(){
+        setTimeout(()=>{
+            let loading = document.querySelector('.loading');
+            loading.style.display = 'none';
+        },3000)
+        
+    }
+</script>
+</html>

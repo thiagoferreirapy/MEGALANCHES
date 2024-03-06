@@ -1,0 +1,596 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;900&family=Road+Rage&family=Sarala:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+header{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #090708;
+    z-index: 1;
+}
+
+header img{
+    width: 100px;
+    height: 80px;
+    margin-left: 20px;
+    margin-right: 20px;
+    opacity: 10%;
+}
+
+header input{
+    width: 550px;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-family: 'Sarala';
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0);
+    background-color: #CCCCCC;
+}
+
+
+header i{
+    margin: 10px;
+    font-size: 20px;
+    color: #CCCCCC;
+}
+
+header a{
+    color: #CCCCCC;
+    text-decoration: none;
+    font-family: 'Poppins';
+    font-size: 17px;
+    font-weight: 600;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+.pedidos{
+    display: flex;
+}
+
+.menu_pedidos{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background-color: #E2E2E2;
+    width: 20%;
+    height: 100%;
+    top: 100px;
+}
+
+.menu_pedidos a{
+    text-align: center;
+    font-family: 'Poppins';
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px;
+    border-top: 2px solid rgba(94, 94, 94, 0.114);
+    color: black;
+}
+
+.opcoes_pedido{
+    width: 80%;
+    position: absolute;
+    top: 100px;
+    left: 20%;
+    padding:0px 120px;
+    z-index: 0.8;
+}
+
+.principal_pedidos{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.detalhes_produto{
+    display: flex;
+    margin-top: 50px;
+    width: 100%;
+    border-bottom: 2px solid #090708;
+    height: 60px;
+    align-items: center;
+}
+
+.detalhes_produto button{
+    color: #090708;
+    background-color: #fff;
+    margin: 0px 15px 0px 0px;
+    border: none;
+
+}
+
+.detalhes_produto button i{
+    font-size: 20px;
+}
+.detalhes_produto h1{
+    font-family: 'Poppins';
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 30px;
+}
+
+.container_informacoes{
+    margin-top: 30px;
+    display: flex;
+    
+}
+
+.container_informacoes img{
+    width: 450px;
+    height: 250px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.615);
+}
+
+.titulo_burguer{
+    margin: 15px 0px 15px 50px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.titulo_burguer h2{
+    font-family: 'Sarala';
+    font-size: 25px;
+    font-weight: 600;
+}
+.titulo_burguer p{
+    font-family: 'Poppins';
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.pesquisa{
+    margin: 30px 20px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+}
+
+.pesquisa label{
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    cursor: text;
+    align-items: center;
+}
+
+.pesquisa label input{
+    width: 100%;
+    padding: 5px;
+    border: none;
+    background-color: #d9d9d900;
+    font-family: 'Poppins';
+    font-weight: 500;
+    outline: none;
+}
+
+.pesquisa label i{
+    font-size: 20px;
+    margin: 0px 10px;
+    color: #5a5a5a;
+}
+
+.container_drop{
+    display: flex;
+    flex-direction: column;
+}
+
+.container_extra{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.extra_container{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.titulo_extra{
+    display: flex;
+    padding: 10px 20px;
+    justify-content: space-between;
+    background-color: #D9D9D9;
+    align-items: center;
+}
+
+.titulo h3{
+    font-family: 'Sarala';
+    font-size: 16px;
+    color: #090708;
+    line-height: 15px;
+}
+.titulo p{
+    font-family: 'Sarala';
+    font-size: 12px;
+    color: #5a5a5a;
+    font-weight: 600;
+}
+.titulo_extra button{
+    border: none;
+    background-color: #09070800;
+    outline: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+@keyframes blink{
+    to {
+        visibility: hidden;
+    }
+}
+
+.active{
+    display: flex !important;
+    flex-direction: column;
+    
+}
+
+
+
+.informacoes_extra{
+    
+    display: flex;
+    border: 1px solid #090708;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px;
+    cursor: text;
+}
+
+.informacoes_extra img{
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.container_informacoes_extra{
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+    
+}
+
+.container_informacoes_extra h4{
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.container_informacoes_extra p{
+    font-family: 'Poppins';
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.container_informacoes_extra  #valor{
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #985D3A ;
+}
+
+.container_informacoes_extra strong{
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 100px;
+    color: #565656db ;
+}
+
+
+.escolha_quantidade{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.btn_mais{
+    margin-left: 15px;
+    border: none;
+    font-size: 20px;
+    color: #7d4322;
+    background-color: #5a5a5a00;
+    cursor: pointer;
+}
+
+
+.btn_menos{
+    margin-right: 15px;
+    border: none;
+    font-size: 20px;
+    color: #5a5a5a;
+    background-color: #5a5a5a00;
+    cursor: pointer;
+}
+
+#quantidade_item_extra{
+    font-size: 20px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border: none;
+}
+
+
+/* ##########################################################3 */
+
+
+.container_produto{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+
+
+.produto_container{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.titulo_produto{
+    display: flex;
+    padding: 10px 20px;
+    justify-content: space-between;
+    background-color: #D9D9D9;
+    align-items: center;
+}
+
+.titulo h3{
+    font-family: 'Sarala';
+    font-size: 16px;
+    color: #090708;
+    line-height: 15px;
+}
+.titulo p{
+    font-family: 'Sarala';
+    font-size: 12px;
+    color: #5a5a5a;
+    font-weight: 600;
+}
+.titulo_produto button{
+    border: none;
+    background-color: #09070800;
+    outline: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+@keyframes blink{
+    to {
+        visibility: hidden;
+    }
+}
+
+.active{
+    display: flex !important;
+}
+
+.informacoes_produto{
+    display: flex;
+    border: 1px solid #090708;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px;
+    cursor: text;
+    
+}
+
+.content_img_produto{
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.img_produto{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.container_informacoes_produto{
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+    
+}
+
+.container_informacoes_produto h4{
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.container_informacoes_produto p{
+    font-family: 'Poppins';
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.container_informacoes_produto  #valor{
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #985D3A ;
+}
+
+.container_informacoes_produto strong{
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 100px;
+    color: #565656db ;
+}
+
+
+.escolha_quantidade{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.btn_mais{
+    margin-left: 15px;
+    border: none;
+    font-size: 20px;
+    color: #7d4322;
+    background-color: #5a5a5a00;
+    cursor: pointer;
+}
+
+
+.btn_menos{
+    margin-right: 15px;
+    border: none;
+    font-size: 20px;
+    color: #5a5a5a;
+    background-color: #5a5a5a00;
+    cursor: pointer;
+}
+
+#quantidade_item_produto{
+    font-size: 20px;
+    font-family: 'Poppins';
+    font-weight: 600;
+}
+
+
+
+.observacoes-pedido{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-bottom: 100px;
+}
+
+.titulo-observacoes{
+    display: flex;
+    padding: 15px 20px;
+    justify-content: space-between;
+    background-color: #D9D9D9;
+    align-items: center;
+    
+}
+
+.titulo-observacoes h3{
+    font-family: 'Sarala';
+    font-size: 16px;
+    
+}
+
+.observacoes-pedido textarea{
+    padding: 10px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 12px;
+    margin: 5px 0px;
+    border-radius: 10px;
+    height: 150px;
+    border: 2px solid #09070874;
+}
+
+
+.container-finalizar-pedido{
+    display: flex;
+    background-color: #090708;
+    margin-top: 50px;
+    justify-content: center;
+    padding: 15px;
+    align-items: center;
+    position: fixed;
+    top: 85vh;
+    width: 64.2%;
+    
+
+}
+
+.escolha_quantidade-final{
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.escolha_quantidade-final #btn_menos_final{
+    color: #CCCCCC;
+}
+.escolha_quantidade-final #btn_mais_final{
+    color: #CCCCCC;
+    
+}
+
+#quantidade_produto_final{
+    font-family: 'Sarala';
+    font-size: 25px;
+    margin: 0px 10px;
+    color: #985D3A;
+    
+}
+
+#adcionar_pedido{
+    cursor: pointer;
+    width: 400px;
+    border-radius: 10px;
+    border: none;
+    background-color: #985D3A;
+    transition: 0.3s all ease-in;
+    padding: 7px;
+}
+#adcionar_pedido:hover{
+    background-color: #7d4322;
+}
+
+.valores-final{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 15px;
+}
+
+.valores-final h4{
+    color: rgb(255, 251, 255);
+    font-size: 16px;
+    font-family: 'Poppins';
+    font-weight: 600;
+}

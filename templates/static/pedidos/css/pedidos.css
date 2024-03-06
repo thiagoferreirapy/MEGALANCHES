@@ -1,0 +1,514 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;900&family=Road+Rage&family=Sarala:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+
+header{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100px;
+    width: 100%;
+    border-bottom: 1px solid #E2E2E2;
+    
+}
+
+header img{
+    width: 100px;
+    height: 80px;
+    margin-left: 20px;
+    margin-right: 20px;
+    opacity: 10%;
+}
+
+header input{
+    width: 550px;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-family: 'Sarala';
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0);
+    background-color: #CCCCCC;
+}
+
+
+header i{
+    margin: 10px;
+    font-size: 20px;
+    color: #CCCCCC;
+}
+
+header a{
+    color: #CCCCCC;
+    text-decoration: none;
+    font-family: 'Poppins';
+    font-size: 17px;
+    font-weight: 600;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.principal{
+    background-image: url('../img/perfil.png');
+    height: 100vh;
+    object-fit: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.principal p{
+    margin-top: 150px;
+    font-family: 'Road Rage';
+    font-size: 25px;
+    color: #d0d0d0;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.715);
+}
+
+.principal h1{
+    font-family: 'Road Rage', sans-serif;
+    font-size: 110px;
+    color: #E2E2E2;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.715);
+}
+
+.principal h2{
+    font-family: 'Road Rage', sans-serif;
+    font-size: 40px;
+    color: #E2E2E2;
+    font-weight: 100;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.715);
+}
+.principal h2 span{
+
+    color: #dfb34d;
+
+}
+
+.principal h3{
+    font-family: 'Road Rage', sans-serif;
+    font-size: 75px;
+    color: #dfb34d;
+    font-weight: 100;
+    margin-top: 60px;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.715);
+}
+
+.atendimento_finalizado{
+    color: #ff003c;
+    font-family: 'Road Rage', sans-serif;
+    font-size: 75px;
+    font-weight: 100;
+    margin-top: 60px;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.715);
+}
+
+.triste{
+    width: 60px;
+    margin: 0 15px 0 15px;
+}
+
+.continue_scroll{
+    width: 100px;
+    height: 70px;
+    position: absolute;
+    top: 90vh;
+    animation: float 5s ease-in-out infinite;
+}
+
+.continue_scroll img{
+    width: 100%;
+    height: 100%;
+}
+
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0)
+    }
+    50% {
+        transform: translateY(-40px);
+    }
+}
+
+
+.container_hora_pagamento{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    margin-top: 200px;
+    padding: 0px 100px;
+}
+
+.container_hora{
+    display: flex;
+    align-items: center;
+
+
+}
+
+.container_hora i{
+    font-size: 35px;
+    margin-right: 20px;
+    color: #E2E2E2;
+    
+}
+
+.container_hora p{
+    font-size: 16px;
+    font-family: 'Poppins';
+    margin: 5px;
+    font-weight: 500;
+}
+.container_hora p span{
+    font-size: 16px;
+    font-family: 'Poppins';
+    margin: 5px;
+    font-weight: 500;
+    color: #dfb34d;
+}
+
+.container_hora p img{
+    width: 10px;
+    margin-left: 15px;
+}
+
+.container_formas_pagamento{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container_formas_pagamento i{
+    font-size: 35px;
+    margin-right: 20px;
+    color: #E2E2E2;
+}
+
+.container_formas_pagamento p{
+    font-size: 16px;
+    font-family: 'Poppins';
+    margin: 5px;
+    font-weight: 500;
+}
+
+.pagamento{
+    display: flex;
+    align-items: center;
+}
+
+.container_pagamento{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.container_pagamento i{
+    color: #E2E2E2;
+    font-size: 25px;
+}
+
+.pedidos{
+    display: flex;
+}
+
+.menu_pedidos{
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    background-color: #E2E2E2;
+    width: 300px;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.menu_pedidos button{
+    width: 100%;
+    text-align: center;
+    font-family: 'Poppins';
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px;
+    border: none;
+    border-top: 2px solid rgba(94, 94, 94, 0.114);
+    color: black;
+    cursor: pointer;
+}
+
+
+.loading{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    z-index: 1;
+}
+
+
+
+/* @keyframes loader{
+    0%{
+        transform: rotate(0deg);
+        
+    }
+    100%{
+        transform: rotate(360deg);
+        
+    }
+} */
+@keyframes loader{
+    0%{
+        
+        transform: scale(0.2);
+    }
+    50%{
+        transform: scale(1.01);
+    }
+    100%{
+
+        transform: scale(0.2);
+    }
+}
+
+.container_loader{
+    display: flex;
+    width: 100px;
+    height: 100px;
+    border: 10px solid #c28246;
+    /* border-top: 7px solid #ffffff; */
+    border-radius: 50%;
+    background-color: transparent;
+    animation: loader ease-in-out 4s infinite ;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes loadMenos{
+    0%{
+        
+        transform: scale(0.2);
+    }
+    50%{
+        transform: scale(1.01);
+    }
+    100%{
+
+        transform: scale(0.2);
+    }
+}
+
+.loadMenos{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 100%;
+    background-color: transparent;
+    animation: loadMenos ease-in-out 3s infinite ;
+    background-color: #8e603474;
+    align-items: center;
+    justify-content: center;
+}
+
+.loadMenos i{
+    font-size: 40px;
+    color: #986A3F;
+}
+
+
+
+.container_pedidos{
+    width: 100%;
+    padding-left: 100px;
+    padding-right: 100px;
+    flex-wrap: wrap
+}
+
+.container_pedidos h3{
+    font-family: 'Road Rage';
+    font-size: 40px;
+    margin-top: 50px;
+    font-weight: 500;
+}
+
+.container_burguers{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    
+    
+}
+
+.container_burguers form{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#burguer-bacon{
+    border: none;
+}
+
+
+
+.burguers{
+    background-color: #D9D9D9;
+    width: 430px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.332);
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    cursor: pointer;
+    
+}
+
+.container_informacoes_burguers{
+    width: 250px;
+    text-align: left;
+}
+.container_informacoes_burguers h4{
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 16px;
+}
+.container_informacoes_burguers h5{
+    font-family: 'Sarala';
+    font-size: 16px;
+    margin: 5px 0px;
+    width: 200px;
+    font-weight: 700;
+    
+}
+.container_informacoes_burguers p{
+    font-family: 'Sarala';
+    font-size: 14px;
+    margin: 5px 0px;
+    width: 250px;
+    line-height: 17px;
+    
+}
+
+.content_img{
+    width: 120px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.burguers img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+
+
+footer{
+    background-color: #383838;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+footer h6{
+    font-family: 'Poppins';
+    font-size: 20px;
+    font-weight: 600;
+    color: #E2E2E2;
+    margin-top: 20px;
+    
+}
+
+footer .menu_footer nav{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+
+}
+footer .menu_footer nav a{
+    text-decoration: none;
+    color: #D9D9D9;
+    font-size: 16px;
+    font-family: 'Poppins';
+    font-weight: 500;
+
+}
+
+footer .contato_redes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .contato_redes nav a{
+    margin: 10px;
+    text-decoration: none;
+    color: #D9D9D9;
+    font-size: 20px;
+    font-family: 'Poppins';
+    font-weight: 500;
+
+}
+
+footer .localizacao_pagamentos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .localizacao_pagamentos .local{
+    display: flex;
+    align-items: center;
+}
+footer .localizacao_pagamentos .local i{
+    margin-right: 15px;
+    color: #E2E2E2;
+}
+footer .localizacao_pagamentos .local p{
+    font-family: 'Poppins';
+    color: #E2E2E2;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+footer .localizacao_pagamentos .pagamentos i{
+    margin: 15px;
+    color: #E2E2E2;
+    font-size: 20px;
+}

@@ -1,0 +1,47 @@
+{% load static %}
+
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block 'title' %}{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'geral/css/base.css' %}" rel="stylesheet">
+    
+    {% block 'head' %}{% endblock %}
+  
+  </head>
+  <body>
+    <header>
+        <nav>
+            <a href="" id="home">HOME</a>
+            <button onmouseover="btn()" id="menu" >MENU</button>
+            <div id="container_menu" >
+                <nav >
+                    <a href="{% url 'reserva' %}">RESERVA</a>
+                    <a href="https://drive.google.com/file/d/1ViW_tEHK-tUdzP5KOMU3i32IXerVYj2k/view?usp=sharing" target="_blank">CARDÁPIO</a>
+                    <a href="{% url 'contato' %}">CONTATO</a>
+                    <embed src="../static/estilos/CVS CURRICULO TI.pdf" type="application/pdf" width="100%" height="100%">
+                    <a href="">TRABALHE CONOSCO</a>
+                </nav>
+            
+            </div>
+            
+            <a href="{% url 'pedidos' %}">PEDIDOS</a>
+            
+            
+            <a href="{% url 'home' %}"><img src="{% static 'geral/img/logo.png' %}" alt=""></a>
+            <a href="#galeria">GALERIA</a>
+            <a href="#sobre">SOBRE</a>
+            <a href="#localizacao">LOCALIZAÇÃO</a>
+        </nav>
+    </header>
+    {% block 'body' %}
+        
+    {% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'geral/js/home.js' %}"></script>
+  </body>
+</html>

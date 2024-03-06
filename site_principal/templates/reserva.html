@@ -1,0 +1,104 @@
+{% extends 'bases/base2.html' %}
+{% load static %}
+
+{% block 'head' %}
+    <link href="{% static 'geral/css/reserva.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="../static/imagens/Group 34logo.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/dc37c7fe1c.js" crossorigin="anonymous"></script>
+{% endblock %}
+
+<title>{% block 'title' %}Reserva - MEGA LANCHES{% endblock %}</title>
+
+{% block 'body' %}
+    <main  onmouseover="btn2()">
+        <section class="principal">
+            <h1>MEGA LANCHES</h1>
+            <h2>RESERVE SEU CANTINHO E MATE SUA FOME !!</h2>
+            <p>RÁPIDO, PRÁTICO, DELICIOSO, DO JEITO QUE VOCÊ MERECE...</p>
+            <div class="continue_scroll">
+                <img src="{% static 'geral/img/setas.png' %}" alt="">
+            </div>
+        </section>
+        <section class="principal_reserva">
+            <h2>FAÇA UMA RESERVA</h2>
+            <div class="informacoes_reserva">
+                <div class="container_reserva">
+                    <h3>Reserve um cantinho via whatsapp:</h3>
+                    <ul>
+                        <li>Informe seu nome completo</li>
+                        <li>Data da reserva</li>
+                        <li>Horário</li>
+                        <li>Unidade da reserva</li>
+                        <li>Número para contato</li>
+                    </ul>
+                </div>
+                <div class="container_reserva">
+                    <h3>Entraremos em contato para confirmar a reserva</h3>
+                    <ul>
+                        <li>Via telefone ou whatsapp</li>
+                        <li>Contato via email</li>
+                    </ul>
+                    <p>Tempo maximo de tolerancia será de 20 minutos
+                        de atraso, o seu cantinho será liberada para 
+                        outros clientes.</p>
+                </div>
+                <div class="container_reserva">
+                    <h3>Reserva apenas para duas pessoa ou mais</h3>
+                    <p>Reservas de Segunda a Sábado até as 20:00. Para grupos de 10 para cima cobramos uma pequena taxa de pré reserva, valor devolvido na hora que o reservante chegar</p>
+                </div>
+            </div>
+            <a href="https://wa.me/+5561994162084" target="_blank">FAZER RESERVA</a>
+
+        </section>
+        <footer>
+            <section class="containers_footer">
+                <div class="containers">
+                    <h4>MENU</h4>
+                    <nav>
+                        <a href="">Cardápio</a>
+                        <a href="">Pedidos</a>
+                        <a href="">Trabalhe Conosco</a>
+
+                    </nav>
+                </div>
+                <div class="containers">
+                    <h4>CONTATO</h4>
+                    <div class="icones">
+                        <a href=""><i class="fa-solid fa-phone"></i></a>
+                        <a href=""><i class="fa-solid fa-envelope"></i></a>
+                        <a href="https://wa.me/+5561994162084" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                        
+                        
+                        
+                    </div>
+                    <h4>NOSSAS REDES</h4>
+                    <div class="icones">
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href=""><i class="fa-brands fa-tiktok"></i></a>
+                        
+                        
+                        
+                    </div>
+                </div>
+                <div class="containers">
+                    <h4>LOCALIZAÇÃO</h4>
+                    <div class="icones">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>Rua tal, Bairro TALTAL,  Cidade TAL</p>
+                    </div>
+                    <h4>FORMAS DE PAGAMENTO</h4>    
+                    <div class="icones">
+                        <i class="fa-brands fa-cc-visa"></i>
+                        <i class="fa-brands fa-cc-mastercard"></i>
+                        <i class="fa-brands fa-pix"></i>
+                        <i class="fa-brands fa-paypal"></i>
+                    </div>
+                </div>
+            </section>
+        </footer>
+    </main>
+
+{% endblock %}
+<script src="{% static 'geral/js/home.js' %}"></script>
+</html>
